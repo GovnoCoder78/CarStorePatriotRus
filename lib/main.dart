@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/Cars.dart';
 import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
 import 'package:rus_cars_list/pages/CarCard.dart';
+import 'package:rus_cars_list/widgetSamples/BottomBarSample.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,10 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // routes: {'/carCard': (BuildContext context) {
-      //   return CarCard(carIndex: ,); //провести сюда индекс машины с массива
-      //   }
-      // },
       title: 'Российские автомобили',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -33,6 +30,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBarSample(),
       appBar: AppBar(
         title: const Text('Отечественный автопром',
         style: TextStyle(
