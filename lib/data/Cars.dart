@@ -14,6 +14,7 @@ class Cars {
   Cars(this.id, this.name, this.characteristics, this.videoUrl, this.price, this.imagePath, this.description);
 }
 
+
 List<Cars> carsList = [
   Cars(1, 'Lada Granta Classic', ["Седан","1160 кг", "Бензиновый", "1.6 л","106","6,8", "Механическая 5МТ"],"https://www.youtube.com/watch?v=e_0aWE9xtF0", 1000000, ["https://s.auto.drom.ru/i24228/m/bull_image_stub/default_90001e90f77318496b726b2e061f11f5.jpg",
                                                                           "https://static.lada.ru/files/sd/1466/gallery/779efc23-47e1-4588-af4c-2e1414620fea.jpeg",
@@ -65,6 +66,12 @@ List<Cars> carsList = [
   // Cars(16, 'Sollers UAZ Hunter', 'Внедорожник, 2.7 л, 5МТ, 145 л.с.', 1400000,["https://sollers-auto.com/about/products/img/uaz-hunter.jpg",
   //                                                                              "https://s2.usedcars.ru/photos/2020/05/main/Jzz0M4wrUuWrNdZLp075.jpg",
   //                                                                              "https://image-server.autospot.ru/images/1/1/0/10/1/3/1307833/resize/635x476/1307833.png"]),
+];
+
+List <Cars> cart = [
+  carsList[0],
+  carsList[1],
+  carsList[2]
 ];
 
 List <String> characteristicName = ["Тип машины","Масса", "Тип двигателя","Рабочий объем двигателя", "Мощность двигателя (л/с)", "Расход на 100 км, л", "Коробка передач"];

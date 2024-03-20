@@ -53,12 +53,8 @@ class MyHomePage extends StatelessWidget {
             ),
             itemCount: carsList.length,
             itemBuilder: (BuildContext context, int index){
-
               return MyGridView(
-                  carName: carsList[index].name,
-                  desc: carsList[index].description,
-                  cost: carsList[index].price,
-                  img: carsList[index].imagePath[0],
+                  carId: index,
                   onPressed:(){
                   Navigator.push(
                     context,
