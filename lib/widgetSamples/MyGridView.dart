@@ -2,14 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/Cars.dart';
 
-class MyGridView extends StatelessWidget {
-   final VoidCallback onPressed;
-   int carId;
-   MyGridView({super.key, required this.carId,  required this.onPressed});
+
+class MyGridView extends StatefulWidget {
+  VoidCallback onPressed;
+  Cars car;
+  MyGridView({super.key, required this.car, required this.onPressed});
+
+  @override
+  State<MyGridView> createState() => _MyGridViewState(car, onPressed);
+}
+
+class _MyGridViewState extends State<MyGridView> {
+  Cars car;
+  VoidCallback onPressed;
+  bool isClick = false;
+  _MyGridViewState(this.car, this.onPressed);
 
   @override
   Widget build(BuildContext context) {
-    Cars car = carsList[carId];
     return GestureDetector(
       onTap: onPressed,
       child: Container(
@@ -64,10 +74,10 @@ class MyGridView extends StatelessWidget {
                   )
               )
             ),
-              Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.favorite),
-                    onPressed: null,
+              Expanded(child: IconButton(
+                  icon: Icon(Icons.favorite),
+                    color: isClick ? Colors.red : Colors.grey,
+                  onPressed: () => setState(() => this.isClick = !this.isClick),
                   ),
                 flex: 1,
               )

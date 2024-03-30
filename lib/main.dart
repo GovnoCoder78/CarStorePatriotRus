@@ -10,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,7 @@ class MyHomePage extends StatelessWidget {
             itemCount: carsList.length,
             itemBuilder: (BuildContext context, int index){
               return MyGridView(
-                  carId: index,
+                  car: carsList[index],
                   onPressed:(){
                   Navigator.push(
                     context,

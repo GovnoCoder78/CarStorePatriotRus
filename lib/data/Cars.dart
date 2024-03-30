@@ -74,4 +74,10 @@ List <Cars> cart = [
   carsList[2]
 ];
 
+List <Cars> favorite = [
+  carsList[0],
+  carsList[1],
+  carsList[2]
+];
+
 List <String> characteristicName = ["Тип машины","Масса", "Тип двигателя","Рабочий объем двигателя", "Мощность двигателя (л/с)", "Расход на 100 км, л", "Коробка передач"];

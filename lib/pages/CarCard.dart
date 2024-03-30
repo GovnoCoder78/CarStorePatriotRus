@@ -3,6 +3,7 @@ import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/Cars.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:rus_cars_list/widgetSamples/BottomBarSample.dart';
 class CarCard extends StatefulWidget {
   int carIndex;
   CarCard({super.key, required this.carIndex});
@@ -24,6 +25,7 @@ class _CarCardState extends State<CarCard> {
     videoId = YoutubePlayerController.convertUrlToId(car.videoUrl);
     _controller.loadVideoById(videoId: videoId.toString());
     return Scaffold(
+      bottomNavigationBar: BottomBarSample(),
       appBar: AppBar(
         title: Text(car.name,
         style: TextStyle(
