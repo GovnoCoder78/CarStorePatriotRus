@@ -36,8 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   final openPage = [
     MainPage(),
-    Cart(),
-    FavoriteList()
+    FavoriteList(),
+    Cart()
   ];
   @override
   Widget build(BuildContext context) => Scaffold(

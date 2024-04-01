@@ -3,6 +3,7 @@ import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/Cars.dart';
 import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
 import 'package:rus_cars_list/pages/CarCard.dart';
+import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
