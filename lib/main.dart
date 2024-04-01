@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/Cars.dart';
 import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
+import 'package:rus_cars_list/pages/MainPage.dart';
+import 'package:rus_cars_list/pages/FavoriteList.dart';
+import 'package:rus_cars_list/pages/Cart.dart';
 import 'package:rus_cars_list/pages/CarCard.dart';
-import 'package:rus_cars_list/widgetSamples/BottomBarSample.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -23,49 +25,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomBarSample(),
-      appBar: AppBar(
-        title: const Text('Отечественный автопром',
-        style: TextStyle(
-         fontSize: 22,
-         fontWeight: FontWeight.bold
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int selectedIndex = 0;
+  final openPage = [
+    MainPage(),
+    Cart(),
+    FavoriteList()
+  ];
+  @override
+  Widget build(BuildContext context) => Scaffold(
+      body: openPage[selectedIndex],
+      bottomNavigationBar:  BottomNavigationBar(
+        onTap: (index) => setState(() => selectedIndex = index),
+        currentIndex: selectedIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Главная',
           ),
-        ),
-        backgroundColor: Color.fromARGB(100, 220, 124, 124),
-        centerTitle: true,
-      ),
-      backgroundColor: Color.fromARGB(100, 211, 211, 211),
-      body: Card(
-        color: Color.fromARGB(100, 211, 211, 211),
-        child:Container(
-          child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 15,
-              mainAxisSpacing: 20
-            ),
-            itemCount: carsList.length,
-            itemBuilder: (BuildContext context, int index){
-              return MyGridView(
-                  car: carsList[index],
-                  onPressed:(){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (BuildContext context) => CarCard(carIndex: index)),
-                  );
-                }
-              );
-            }
-        ),
-      )
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Избранное',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Корзина',
+          ),
+        ],
+        selectedItemColor: Colors.red,
       )
     );
   }
-}
+
 
