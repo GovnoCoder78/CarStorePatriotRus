@@ -11,7 +11,7 @@ class AppBarM extends StatelessWidget {
         'Отечественный автопром',
         style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
       ),
-      backgroundColor: Color.fromARGB(100, 220, 124, 124),
+      backgroundColor: const Color.fromARGB(100, 220, 124, 124),
       centerTitle: true,
     );
   }
@@ -20,11 +20,14 @@ class AppBarM extends StatelessWidget {
 class FavoritePage extends StatefulWidget {
   FavoritePage({super.key});
   VoidCallback? onPressed;
+  
   @override
   State<FavoritePage> createState() => _FavoritePageState();
 }
 
 class _FavoritePageState extends State<FavoritePage> {
+  bool isClick = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,17 +36,17 @@ class _FavoritePageState extends State<FavoritePage> {
           'Отечественный автопром',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color.fromARGB(100, 220, 124, 124),
+        backgroundColor: const Color.fromARGB(100, 220, 124, 124),
         centerTitle: true,
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
             children: [
               Container(
                 alignment: Alignment.centerLeft,
-                child: Text(
+                child: const Text(
                   'Favorite',
                   style: TextStyle(fontSize: 30),
                 ),
@@ -57,7 +60,7 @@ class _FavoritePageState extends State<FavoritePage> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.grey,
                             ),
-                            padding: EdgeInsets.only(top: 30),
+                            padding: const EdgeInsets.only(top: 30),
                             child: Row(
                               children: [
                                 Expanded(
@@ -65,13 +68,23 @@ class _FavoritePageState extends State<FavoritePage> {
                                     child: Image.network(
                                         carsList[index].imagePath[0])),
                                 Expanded(
-                                  flex: 1,
+                                  flex: 2,
                                   child: Text(favorite[index].name),
                                 ),
                                 Expanded(
                                   flex: 1,
                                   child: Text(favorite[index].price.toString()),
                                 ),
+                                Expanded(
+                                  flex: 1,
+                                  child: IconButton(
+                                    icon: const Icon(Icons.favorite),
+                                    color: isClick ? Colors.red : Colors.grey,
+                                    onPressed: () {
+                                      favorite.remove(favorite[index]);
+                                    },
+                                  ),
+                                )
                               ],
                             ));
                       }))

@@ -19,15 +19,15 @@ class _MainPageState extends State<MainPage> {
             'Отечественный автопром',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          backgroundColor: Color.fromARGB(100, 220, 124, 124),
+          backgroundColor: const Color.fromARGB(100, 220, 124, 124),
           centerTitle: true,
         ),
-        backgroundColor: Color.fromARGB(100, 211, 211, 211),
+        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
         body: Card(
-            color: Color.fromARGB(100, 211, 211, 211),
+            color: const Color.fromARGB(100, 211, 211, 211),
             child: Container(
               child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 20),

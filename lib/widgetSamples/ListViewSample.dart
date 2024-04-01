@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/pages/cart.dart';
-import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/data.dart';
 
 class ListViewSample extends StatefulWidget {
@@ -37,12 +35,12 @@ class _ListViewSampleState extends State<ListViewSample> {
                        textAlign: TextAlign.left,
                        text: TextSpan(
                          text: favoriteCar.price.toString(),
-                         style: TextStyle(
+                         style: const TextStyle(
                              fontSize: 24,
                              color: Colors.white
                          ),
                          children: [
-                           TextSpan(text: ' ₽', style: TextStyle(
+                           const TextSpan(text: ' ₽', style: TextStyle(
                                fontSize: 24,
                                color: Colors.white
                            )

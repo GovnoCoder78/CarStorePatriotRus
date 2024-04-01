@@ -26,15 +26,15 @@ class _CarCardState extends State<CarCard> {
     return Scaffold(
       appBar: AppBar(
         title: Text(car.name,
-        style: TextStyle(
+        style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold
     ),
     ),
-    backgroundColor: Color.fromARGB(100, 220, 124, 124),
+    backgroundColor: const Color.fromARGB(100, 220, 124, 124),
     centerTitle: true,
       ),
-      backgroundColor: Color.fromARGB(100, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(100, 255, 255, 255),
       body: ListView(
       children: <Widget>[
         Container(
@@ -54,7 +54,7 @@ class _CarCardState extends State<CarCard> {
               children: [
                   Text(car.name,
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                    fontSize: 28,
                    color: Colors.white
                   ),
@@ -63,12 +63,12 @@ class _CarCardState extends State<CarCard> {
                 textAlign: TextAlign.left,
                 text: TextSpan(
                   text: car.price.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                   fontSize: 32,
                    color: Colors.white
                   ),
                   children: [
-                  TextSpan(text: ' ₽', style: TextStyle(
+                  const TextSpan(text: ' ₽', style: TextStyle(
                       fontSize: 32,
                       color: Colors.white
                         )
@@ -79,7 +79,7 @@ class _CarCardState extends State<CarCard> {
                 Container(
                 alignment: Alignment.bottomLeft,
                 height: 50,
-                child: Text('Описание',
+                child: const Text('Описание',
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 26,
                 color: Colors.white),
@@ -90,7 +90,7 @@ class _CarCardState extends State<CarCard> {
                   child: ListView(
                     children: [
                       Text(car.description,
-                        style: TextStyle(fontSize: 22,
+                        style: const TextStyle(fontSize: 22,
                         color: Colors.white)
                       ),
                     ]
@@ -99,14 +99,14 @@ class _CarCardState extends State<CarCard> {
                 Container(
                 height: 50,
                 alignment: Alignment.bottomLeft,
-                child: Text('Характеристики',
+                child: const Text('Характеристики',
                   textAlign: TextAlign.left,
                   style: TextStyle(fontSize: 26,
                       color: Colors.white)
                 )
                 ),
                 Container(
-                  color: Color.fromARGB(105, 255, 255, 255),
+                  color: const Color.fromARGB(105, 255, 255, 255),
                   child: Table(
                     defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                     children: [
@@ -115,7 +115,7 @@ class _CarCardState extends State<CarCard> {
                           Text(
                             textAlign: TextAlign.left,
                               characteristicName[0],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 22,
                                 color: Colors.white
                               ),
@@ -123,7 +123,7 @@ class _CarCardState extends State<CarCard> {
                           Text(
                             textAlign: TextAlign.center,
                               car.characteristics[0],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 22,
                                 color: Colors.white
                               ),
@@ -135,7 +135,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[1],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -143,7 +143,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[1],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -155,7 +155,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[2],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -163,7 +163,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[2],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -175,7 +175,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[3],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -183,7 +183,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[3],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -195,7 +195,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[4],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -203,7 +203,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[4],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -215,7 +215,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[5],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -223,7 +223,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[5],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -235,7 +235,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.left,
                               characteristicName[6],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),
@@ -243,7 +243,7 @@ class _CarCardState extends State<CarCard> {
                             Text(
                               textAlign: TextAlign.center,
                               car.characteristics[6],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
                               ),

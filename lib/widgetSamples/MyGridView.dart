@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/pages/MainPage.dart';
 import 'package:rus_cars_list/data/data.dart';
 
 class MyGridView extends StatefulWidget {
@@ -67,8 +66,9 @@ class _MyGridViewState extends State<MyGridView> {
                               ))
                         ]))),
                     Expanded(
+                      flex: 1,
                       child: IconButton(
-                        icon: Icon(Icons.favorite),
+                        icon: const Icon(Icons.favorite),
                         color: isClick ? Colors.red : Colors.grey,
                         onPressed: () {
                           bool isUnic = true;
@@ -81,7 +81,7 @@ class _MyGridViewState extends State<MyGridView> {
 
                         },
                       ),
-                      flex: 1,
+                      
                     )
                   ]))
             ])));
