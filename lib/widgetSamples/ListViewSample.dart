@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/pages/Cart.dart';
+import 'package:rus_cars_list/pages/cart.dart';
 import 'package:rus_cars_list/main.dart';
-import 'package:rus_cars_list/data/Cars.dart';
+import 'package:rus_cars_list/data/data.dart';
 
 class ListViewSample extends StatefulWidget {
   final VoidCallback pressed;

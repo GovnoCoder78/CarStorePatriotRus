@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/main.dart';
-import 'package:rus_cars_list/data/Cars.dart';
+import 'package:rus_cars_list/data/data.dart';
 
 
 class Cart extends StatefulWidget {
