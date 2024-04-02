@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/data/Cars.dart';
-import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
 import 'package:rus_cars_list/pages/MainPage.dart';
-import 'package:rus_cars_list/pages/FavoriteList.dart';
-import 'package:rus_cars_list/pages/Cart.dart';
-import 'package:rus_cars_list/pages/CarCard.dart';
+import 'package:rus_cars_list/pages/favorite.dart';
+import 'package:rus_cars_list/pages/cart.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -35,9 +33,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   final openPage = [
+<<<<<<< HEAD
     MainPage(),
     FavoriteList(),
     Cart()
+=======
+    const MainPage(),
+    FavoritePage(),
+    const Cart(),
+    
+>>>>>>> foloved
   ];
   @override
   Widget build(BuildContext context) => Scaffold(

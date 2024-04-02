@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/main.dart';
+<<<<<<< HEAD
 import 'package:rus_cars_list/data/Cars.dart';
 import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 import 'package:rus_cars_list/pages/CarCard.dart';
+=======
+import 'package:rus_cars_list/data/data.dart';
+>>>>>>> foloved
 
 
 class Cart extends StatefulWidget {

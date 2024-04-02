@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/pages/Cart.dart';
-import 'package:rus_cars_list/main.dart';
-import 'package:rus_cars_list/data/Cars.dart';
+import 'package:rus_cars_list/data/data.dart';
 
 class cart_list_sample extends StatefulWidget {
   final VoidCallback pressed;
@@ -40,13 +38,18 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                    RichText(
                        textAlign: TextAlign.left,
                        text: TextSpan(
+<<<<<<< HEAD:lib/widgetSamples/cart_list_sample.dart
                          text: addedCar.price.toString(),
                          style: TextStyle(
+=======
+                         text: favoriteCar.price.toString(),
+                         style: const TextStyle(
+>>>>>>> foloved:lib/widgetSamples/ListViewSample.dart
                              fontSize: 24,
                              color: Colors.white
                          ),
                          children: [
-                           TextSpan(text: ' ₽', style: TextStyle(
+                           const TextSpan(text: ' ₽', style: TextStyle(
                                fontSize: 24,
                                color: Colors.white
                            )

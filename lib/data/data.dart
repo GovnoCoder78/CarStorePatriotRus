@@ -1,31 +1,82 @@
-import 'package:flutter/material.dart';
-import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
-import 'package:rus_cars_list/pages/MainPage.dart';
-import 'package:rus_cars_list/pages/CarCard.dart';
+// import 'package:flutter/material.dart';
+// import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
+// import 'package:rus_cars_list/pages/MainPage.dart';
+// import 'package:rus_cars_list/pages/CarCard.dart';
 
 class Cars {
   final int id;
   final String name;
-  final List <String> characteristics;
+  final List<String> characteristics;
   final int price;
-  final List <String> imagePath;
+  final List<String> imagePath;
   final String description;
   final String videoUrl;
-  Cars(this.id, this.name, this.characteristics, this.videoUrl, this.price, this.imagePath, this.description);
+  Cars(this.id, this.name, this.characteristics, this.videoUrl, this.price,
+      this.imagePath, this.description);
 }
 
-
 List<Cars> carsList = [
-  Cars(1, 'Lada Granta Classic', ["Седан","1160 кг", "Бензиновый", "1.6 л","106","6,8", "Механическая 5МТ"],"https://www.youtube.com/watch?v=e_0aWE9xtF0", 1000000, ["https://s.auto.drom.ru/i24228/m/bull_image_stub/default_90001e90f77318496b726b2e061f11f5.jpg",
-                                                                          "https://static.lada.ru/files/sd/1466/gallery/779efc23-47e1-4588-af4c-2e1414620fea.jpeg",
-                                                                          "https://img-c.drive.ru/models.photos/0000/000/000/001/369/48d61e473bac2e29-large.jpg"], """это практичный и надежный седан, идеально подходящий для ежедневных поездок по городу. Автомобиль имеет просторный салон и большой багажник, а также оснащен необходимым набором опций для комфортной езды."""),
-  Cars(2, 'Lada Granta Drive Active', ["Седан","1160 кг","Бензиновый", "1.6 л","115", "7", "Механическая 5МТ"],"https://www.youtube.com/watch?v=e_0aWE9xtF0", 1200000, ["https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/2/e0/eff1eafbb3e4d63e47ad27ab14962e02.jpg&w=2048&q=70",
-                                                                                "https://images.drive.ru/i/0/5d710a27ec05c41e5700000e.jpg",
-                                                                                  "https://cdnstatic.rg.ru/crop1300x868/uploads/images/173/38/35/lada_granta_sport_9.jpeg"], """это модернизированная версия классической Гранты, отличающаяся улучшенным дизайном и более богатой комплектацией. 
+  Cars(
+      1,
+      'Lada Granta Classic',
+      [
+        "Седан",
+        "1160 кг",
+        "Бензиновый",
+        "1.6 л",
+        "106",
+        "6,8",
+        "Механическая 5МТ"
+      ],
+      "https://www.youtube.com/watch?v=e_0aWE9xtF0",
+      1000000,
+      [
+        "https://s.auto.drom.ru/i24228/m/bull_image_stub/default_90001e90f77318496b726b2e061f11f5.jpg",
+        "https://static.lada.ru/files/sd/1466/gallery/779efc23-47e1-4588-af4c-2e1414620fea.jpeg",
+        "https://img-c.drive.ru/models.photos/0000/000/000/001/369/48d61e473bac2e29-large.jpg"
+      ],
+      """это практичный и надежный седан, идеально подходящий для ежедневных поездок по городу. Автомобиль имеет просторный салон и большой багажник, а также оснащен необходимым набором опций для комфортной езды."""),
+  Cars(
+      2,
+      'Lada Granta Drive Active',
+      [
+        "Седан",
+        "1160 кг",
+        "Бензиновый",
+        "1.6 л",
+        "115",
+        "7",
+        "Механическая 5МТ"
+      ],
+      "https://www.youtube.com/watch?v=e_0aWE9xtF0",
+      1200000,
+      [
+        "https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/2/e0/eff1eafbb3e4d63e47ad27ab14962e02.jpg&w=2048&q=70",
+        "https://images.drive.ru/i/0/5d710a27ec05c41e5700000e.jpg",
+        "https://cdnstatic.rg.ru/crop1300x868/uploads/images/173/38/35/lada_granta_sport_9.jpeg"
+      ],
+      """это модернизированная версия классической Гранты, отличающаяся улучшенным дизайном и более богатой комплектацией. 
                                                                                                                                                                               Автомобиль оснащен современными системами безопасности и мультимедиа, а также имеет более мощный двигатель."""),
-  Cars(3, 'Lada Vesta SW Cross', ["Универсал","1300 кг","Бензиновый", "1.6 л","106","9,9",  "Механическая 5МТ"],"https://www.youtube.com/watch?v=Z6_HgFX9E80", 1300000, ["https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/e/d6/09235afbc190e2281c58bc05fb618d6e.jpg&w=1200&q=70"
-                                                                              "https://lada.uz/uploads/family/4/17/overview-1920.jpeg",
-                                                                              "https://img-c.drive.ru/models.photos/0000/000/000/001/126/48d542d9266fc15c-large.jpg"], """это универсал в стиле кроссовер, сочетающий в себе практичность и стиль. Автомобиль имеет повышенный клиренс и защиту днища,
+  Cars(
+      3,
+      'Lada Vesta SW Cross',
+      [
+        "Универсал",
+        "1300 кг",
+        "Бензиновый",
+        "1.6 л",
+        "106",
+        "9,9",
+        "Механическая 5МТ"
+      ],
+      "https://www.youtube.com/watch?v=Z6_HgFX9E80",
+      1300000,
+      [
+        "https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/e/d6/09235afbc190e2281c58bc05fb618d6e.jpg&w=1200&q=70"
+            "https://lada.uz/uploads/family/4/17/overview-1920.jpeg",
+        "https://img-c.drive.ru/models.photos/0000/000/000/001/126/48d542d9266fc15c-large.jpg"
+      ],
+      """это универсал в стиле кроссовер, сочетающий в себе практичность и стиль. Автомобиль имеет повышенный клиренс и защиту днища,
                                                                                                                                                                        что позволяет ему преодолевать легкие бездорожья. Вместительный салон и большой багажник делают Vesta SW Cross идеальным выбором для семейных поездок."""),
   // Cars(4, 'Lada XRAY Cross', 'Кроссовер, 1.8 л, АВТ, 122 л.с.', 1400000,["https://img-c.drive.ru/models.photos/0000/000/000/001/7f3/48d7cc3886abcf58-large.jpg",
   //                                                                         "https://img-c.drive.ru/models.photos/0000/000/000/001/7f5/48d7cc3886abcf58-large.jpg",
@@ -68,16 +119,16 @@ List<Cars> carsList = [
   //                                                                              "https://image-server.autospot.ru/images/1/1/0/10/1/3/1307833/resize/635x476/1307833.png"]),
 ];
 
-List <Cars> cart = [
-  carsList[0],
-  carsList[1],
-  carsList[2]
-];
+List<Cars> cart = [carsList[0], carsList[1], carsList[2]];
 
-List <Cars> favorite = [
-  carsList[0],
-  carsList[1],
-  carsList[2]
-];
+List<Cars> favorite = [];
 
-List <String> characteristicName = ["Тип машины","Масса", "Тип двигателя","Рабочий объем двигателя", "Мощность двигателя (л/с)", "Расход на 100 км, л", "Коробка передач"];
+List<String> characteristicName = [
+  "Тип машины",
+  "Масса",
+  "Тип двигателя",
+  "Рабочий объем двигателя",
+  "Мощность двигателя (л/с)",
+  "Расход на 100 км, л",
+  "Коробка передач"
+];
