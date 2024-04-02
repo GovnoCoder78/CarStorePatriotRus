@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
-import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
+import 'package:rus_cars_list/pages/auth_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -20,13 +20,25 @@ class _MainPageState extends State<MainPage> {
             'Отечественный автопром',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.login),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => const LogInPage()));
+              },
+            )
+          ],
           backgroundColor: const Color.fromARGB(100, 220, 124, 124),
           centerTitle: true,
         ),
-        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Card(
-            color: const Color.fromARGB(100, 211, 211, 211),
+            color: Color.fromARGB(255, 255, 255, 255),
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,

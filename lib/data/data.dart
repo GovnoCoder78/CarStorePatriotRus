@@ -132,3 +132,4 @@ List<String> characteristicName = [
   "Расход на 100 км, л",
   "Коробка передач"
 ];
+

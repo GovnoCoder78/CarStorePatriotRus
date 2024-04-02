@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 
+// ignore: must_be_immutable
 class MainPageGridView extends StatefulWidget {
   VoidCallback onPressed;
   Cars car;
   MainPageGridView({super.key, required this.car, required this.onPressed});
 
   @override
-  State<MainPageGridView> createState() => _MyMainPageGridViewState(car, onPressed);
+  State<MainPageGridView> createState() =>
+      _MyMainPageGridViewState(car, onPressed);
 }
 
 class _MyMainPageGridViewState extends State<MainPageGridView> {
@@ -23,23 +25,21 @@ class _MyMainPageGridViewState extends State<MainPageGridView> {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: const Color.fromARGB(100, 255, 255, 255),
+                color: Color.fromARGB(230, 255, 255, 255),
                 borderRadius: BorderRadius.circular(25)),
             child: Column(children: [
               Expanded(
                   flex: 5,
-                  child: Container(
-                      child: Image.network(
+                  child: Image.network(
                     car.imagePath[0],
-                    fit: BoxFit.fill,
-                  ))),
+                    //fit: BoxFit.fill,
+                  )),
               Expanded(
                   flex: 2,
                   child: Row(children: [
                     Expanded(
                         flex: 4,
-                        child: Container(
-                            child: Column(children: [
+                        child: Column(children: [
                           Container(
                             alignment: Alignment.centerLeft,
                             child: Text(
@@ -64,7 +64,7 @@ class _MyMainPageGridViewState extends State<MainPageGridView> {
                                   ],
                                 ),
                               ))
-                        ]))),
+                        ])),
                     Expanded(
                       flex: 1,
                       child: IconButton(
@@ -74,8 +74,9 @@ class _MyMainPageGridViewState extends State<MainPageGridView> {
                           bool isUnic = true;
                           setState(() => isClick = !isClick);
                           for (int i = 0; i < favorite.length; ++i) {
-                            if (i > 0 && favorite[i].id == favorite[i - 1].id)
+                            if (i > 0 && favorite[i].id == favorite[i - 1].id) {
                               isUnic = false;
+                            }
                           }
                           if (isUnic) favorite.add(car);
                         },

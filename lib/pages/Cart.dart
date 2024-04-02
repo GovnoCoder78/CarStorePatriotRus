@@ -22,28 +22,26 @@ class _CartState extends State<Cart> {
                 fontWeight: FontWeight.bold
             ),
           ),
-          backgroundColor: Color.fromARGB(100, 220, 124, 124),
+          backgroundColor: const Color.fromARGB(100, 220, 124, 124),
           centerTitle: true,
         ),
-        backgroundColor: Color.fromARGB(100, 211, 211, 211),
+        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
         body: Card(
-            color: Color.fromARGB(100, 211, 211, 211),
-            child:Container(
-              child: ListView.builder(
-
-                  itemCount: cart.length,
-                  itemBuilder: (BuildContext context, int index){
-                    return cart_list_sample(
-                        carId: index,
-                        pressed:(){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (BuildContext context) => CarCard(carIndex: index)),
-                          );
-                        }
-                    );
-                  }
-              ),
+            color: const Color.fromARGB(100, 211, 211, 211),
+            child:ListView.builder(
+            
+                itemCount: cart.length,
+                itemBuilder: (BuildContext context, int index){
+                  return CarListSample(
+                      carId: index,
+                      pressed:(){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (BuildContext context) => CarCard(carIndex: index)),
+                        );
+                      }
+                  );
+                }
             )
         )
     );

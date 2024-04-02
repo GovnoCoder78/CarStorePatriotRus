@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 
-class cart_list_sample extends StatefulWidget {
+class CarListSample extends StatefulWidget {
   final VoidCallback pressed;
   final int carId;
-  const cart_list_sample(
-      {super.key, required this.pressed, required this.carId});
+  const CarListSample({super.key, required this.pressed, required this.carId});
 
   @override
-  State<cart_list_sample> createState() =>
-      _cart_list_sampleState(pressed, carId);
+  State<CarListSample> createState() => CarListSampleState(pressed, carId);
 }
 
-class _cart_list_sampleState extends State<cart_list_sample> {
+class CarListSampleState extends State<CarListSample> {
   final VoidCallback pressed;
   final int carId;
-  _cart_list_sampleState(this.pressed, this.carId);
+  CarListSampleState(this.pressed, this.carId);
   @override
   Widget build(BuildContext context) {
     Cars addedCar = cart[carId];
@@ -24,45 +22,47 @@ class _cart_list_sampleState extends State<cart_list_sample> {
         child: Container(
           child: Column(children: [
             Expanded(
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Image.network(addedCar.imagePath[0]),
-                        flex: 1,
-                      ),
-                      Expanded(
-                          child: Column(
-                        children: [
-                          Text(addedCar.name),
-                          RichText(
-                              textAlign: TextAlign.left,
-                              text: TextSpan(
-                                text: addedCar.price.toString(),
-                                style: const TextStyle(
-                                    fontSize: 24, color: Colors.white),
-                                children: [
-                                  const TextSpan(
-                                      text: ' ₽',
-                                      style: TextStyle(
-                                          fontSize: 24, color: Colors.white))
-                                ],
-                              )),
-                        ],
-                      ))
-                    ],
-                  ),
+              flex: 8,
+              child: Container(
+                alignment: Alignment.center,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Image.network(addedCar.imagePath[0]),
+                    ),
+                    Expanded(
+                        child: Column(
+                      children: [
+                        Text(addedCar.name),
+                        RichText(
+                            textAlign: TextAlign.left,
+                            text: TextSpan(
+                              text: addedCar.price.toString(),
+                              style: const TextStyle(
+                                  fontSize: 24, color: Colors.white),
+                              children: [
+                                TextSpan(
+                                    text: ' ₽',
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white))
+                              ],
+                            )),
+                      ],
+                    ))
+                  ],
                 ),
-                flex: 8),
+              ),
+            ),
             Expanded(
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: [],
-                  ),
+              flex: 1,
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [],
                 ),
-                flex: 1)
+              ),
+            )
           ]),
         ));
   }
