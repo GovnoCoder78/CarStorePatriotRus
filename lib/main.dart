@@ -36,11 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
     const MainPage(),
     FavoritePage(),
     const Cart(),
+    const MainPage()
   ];
   @override
   Widget build(BuildContext context) => Scaffold(
       body: openPage[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         onTap: (index) => setState(() => selectedIndex = index),
         currentIndex: selectedIndex,
         items: const <BottomNavigationBarItem>[
@@ -56,6 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.shopping_cart),
             label: 'Корзина',
           ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Профиль')
         ],
         selectedItemColor: Colors.red,
       ));

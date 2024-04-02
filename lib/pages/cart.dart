@@ -16,7 +16,7 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Отечественный автопром',
+          title: const Text('Корзина',
             style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold
@@ -30,7 +30,6 @@ class _CartState extends State<Cart> {
             color: Color.fromARGB(100, 211, 211, 211),
             child:Container(
               child: ListView.builder(
-
                   itemCount: cart.length,
                   itemBuilder: (BuildContext context, int index){
                     return cart_list_sample(

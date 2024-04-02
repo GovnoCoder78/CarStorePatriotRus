@@ -23,6 +23,7 @@ class _CarCardState extends State<CarCard> {
     _controller.cueVideoById(videoId: videoId.toString());
     videoId = YoutubePlayerController.convertUrlToId(car.videoUrl);
     _controller.loadVideoById(videoId: videoId.toString());
+
     return Scaffold(
       appBar: AppBar(
         title: Text(car.name,
