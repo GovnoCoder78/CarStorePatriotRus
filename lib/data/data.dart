@@ -121,7 +121,7 @@ List<Cars> carsList = [
 
 List<Cars> cart = [carsList[0], carsList[1], carsList[2]];
 
-List<Cars> favorite = [/*carsList[0], carsList[1], carsList[2]*/];
+List<Cars> favorite = [];
 
 List<String> characteristicName = [
   "Тип машины",

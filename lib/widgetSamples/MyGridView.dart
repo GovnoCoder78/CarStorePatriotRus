@@ -24,7 +24,7 @@ class _MyGridViewState extends State<MyGridView> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: const Color.fromARGB(100, 255, 255, 255),
-                borderRadius: BorderRadius.circular(6)),
+                borderRadius: BorderRadius.circular(25)),
             child: Column(children: [
               Expanded(
                   flex: 5,
@@ -73,15 +73,13 @@ class _MyGridViewState extends State<MyGridView> {
                         onPressed: () {
                           bool isUnic = true;
                           setState(() => isClick = !isClick);
-                          for(int i = 0; i < favorite.length; ++i){
-                            if(i > 0 && favorite[i].id == favorite[i-1].id) isUnic = false;
+                          for (int i = 0; i < favorite.length; ++i) {
+                            if (i > 0 && favorite[i].id == favorite[i - 1].id)
+                              isUnic = false;
                           }
-                          if(isUnic) favorite.add(car);
-                          
-
+                          if (isUnic) favorite.add(car);
                         },
                       ),
-                      
                     )
                   ]))
             ])));

@@ -53,7 +53,7 @@ class _FavoritePageState extends State<FavoritePage> {
               ),
               Expanded(
                   child: ListView.builder(
-                      itemCount: favorite.length,
+                      // itemCount: favorite.length,
                       itemBuilder: (context, index) {
                         return Container(
                             decoration: BoxDecoration(
