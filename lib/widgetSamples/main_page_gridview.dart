@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 
-class MyGridView extends StatefulWidget {
+class MainPageGridView extends StatefulWidget {
   VoidCallback onPressed;
   Cars car;
-  MyGridView({super.key, required this.car, required this.onPressed});
+  MainPageGridView({super.key, required this.car, required this.onPressed});
 
   @override
-  State<MyGridView> createState() => _MyGridViewState(car, onPressed);
+  State<MainPageGridView> createState() => _MyMainPageGridViewState(car, onPressed);
 }
 
-class _MyGridViewState extends State<MyGridView> {
+class _MyMainPageGridViewState extends State<MainPageGridView> {
   Cars car;
   VoidCallback onPressed;
   bool isClick = false;
-  _MyGridViewState(this.car, this.onPressed);
+  _MyMainPageGridViewState(this.car, this.onPressed);
 
   @override
   Widget build(BuildContext context) {

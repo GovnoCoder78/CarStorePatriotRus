@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
-import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
-import 'package:rus_cars_list/pages/CarCard.dart';
+import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
+import 'package:rus_cars_list/pages/product_page.dart';
 import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 
 class MainPage extends StatefulWidget {
@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
                       mainAxisSpacing: 20),
                   itemCount: carsList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return MyGridView(
+                    return MainPageGridView(
                         car: carsList[index],
                         onPressed: () {
                           Navigator.push(

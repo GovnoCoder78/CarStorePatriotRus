@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/pages/MainPage.dart';
+import 'package:rus_cars_list/pages/main_page.dart';
 import 'package:rus_cars_list/pages/favorite.dart';
 import 'package:rus_cars_list/pages/cart.dart';
 
@@ -33,21 +33,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   final openPage = [
-<<<<<<< HEAD
-    MainPage(),
-    FavoriteList(),
-    Cart()
-=======
     const MainPage(),
     FavoritePage(),
     const Cart(),
-    
->>>>>>> foloved
   ];
   @override
   Widget build(BuildContext context) => Scaffold(
       body: openPage[selectedIndex],
-      bottomNavigationBar:  BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         onTap: (index) => setState(() => selectedIndex = index),
         currentIndex: selectedIndex,
         items: const <BottomNavigationBarItem>[
@@ -65,8 +58,5 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         selectedItemColor: Colors.red,
-      )
-    );
-  }
-
-
+      ));
+}
