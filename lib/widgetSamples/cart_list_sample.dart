@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
+import 'package:input_quantity/input_quantity.dart';
 
 class cart_list_sample extends StatefulWidget {
   final VoidCallback pressed;
@@ -64,6 +65,16 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                       IconButton(
                         onPressed: null,
                         icon: const Icon(Icons.delete)
+                      ),
+                      InputQty(
+                        minVal: 0,
+                        initVal: 0,
+                        maxVal: 1000,
+                        steps: 1,
+                        onQtyChanged: (val){
+                          print(val);
+                        },
+                        qtyFormProps: QtyFormProps(enableTyping: false),
                       )
                     ],
                   ),
