@@ -96,7 +96,7 @@ List<Cars> carsList = [
   ),
   Cars(5,
       'UAZ Patriot Classic',
-      ['Внедорожник, '
+      ['Внедорожник',
       "1980 кг",
       "бензиновый",
       "2,7",
@@ -169,7 +169,7 @@ List<Cars> carsList = [
 ];
 
 List<Cars> cart = [
-  carsList[0], carsList[1], carsList[2]
+
 ];
 
 List<Cars> favorite = [];
