@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:rus_cars_list/pages/cart.dart';
+
 class CarCard extends StatefulWidget {
-  int carIndex;
-  CarCard({super.key, required this.carIndex});
+  final int carIndex;
+  const CarCard({super.key, required this.carIndex});
 
   @override
   State<CarCard> createState() => _CarCardState(carIndex);
@@ -25,6 +23,7 @@ class _CarCardState extends State<CarCard> {
     _controller.cueVideoById(videoId: videoId.toString());
     videoId = YoutubePlayerController.convertUrlToId(car.videoUrl);
     _controller.loadVideoById(videoId: videoId.toString());
+    bool click = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -270,7 +269,12 @@ class _CarCardState extends State<CarCard> {
               ],
             ),
           Container(
-              alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.all(10),
+            alignment: Alignment.bottomCenter,
+            child:Row(
+          children: [
+            Expanded(
+              flex: 4,
               child: ElevatedButton(
                 child: Container(
                   child: Text('Добавить в корзину'),
@@ -279,6 +283,35 @@ class _CarCardState extends State<CarCard> {
                   cart.add(carsList[carIndex]);
                 },
               )
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              flex: 1,
+              child: ElevatedButton(
+                child: Container(
+                  child: Icon(Icons.favorite,
+                  color: click ? Colors.red : Colors.grey
+                ),
+            ),
+                onPressed: () {
+                  setState(() {() {
+                    bool isUnic = true;
+                    for (int i = 0; i < favorite.length; ++i) {
+                      if (i > 0 && favorite[i].id == favorite[i - 1].id)
+                        isUnic = false;
+                    }
+                    if (isUnic) favorite.add(car);
+                  };
+                    click = !click;
+                  });
+                },
+              )
+              )
+
+    ],
+            )
           ),
     ]
       )
