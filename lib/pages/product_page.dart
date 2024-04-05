@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:rus_cars_list/pages/cart.dart';
 class CarCard extends StatefulWidget {
   int carIndex;
   CarCard({super.key, required this.carIndex});
@@ -36,7 +38,9 @@ class _CarCardState extends State<CarCard> {
     centerTitle: true,
       ),
       backgroundColor: const Color.fromARGB(100, 255, 255, 255),
-      body: ListView(
+      body: Stack(
+        children: [
+      ListView(
       children: <Widget>[
         Container(
           height: 320,
@@ -265,6 +269,19 @@ class _CarCardState extends State<CarCard> {
                 )
               ],
             ),
+          Container(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                child: Container(
+                  child: Text('Добавить в корзину'),
+                ),
+                onPressed: () {
+                  cart.add(carsList[carIndex]);
+                },
+              )
+          ),
+    ]
+      )
           );
 
   }
