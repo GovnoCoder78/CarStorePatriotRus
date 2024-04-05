@@ -17,6 +17,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
         useMaterial3: true,
+        scaffoldBackgroundColor: Color.fromARGB(0, 255, 185, 185),
+        textTheme:  TextTheme(
+          labelLarge: TextStyle(color: Colors.black, fontSize: 24, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
+          labelMedium: TextStyle(color: Colors.black, fontSize: 18, fontFamily: 'Roboto'),
+          labelSmall: TextStyle(color: Colors.black, fontSize: 14, fontFamily: 'Roboto'),
+          bodyLarge: TextStyle(color: Colors.black, fontSize: 12, fontFamily: 'Roboto'),
+          bodyMedium: TextStyle(color: Colors.black, fontSize: 10, fontFamily: 'Roboto'),
+          bodySmall: TextStyle(color: Colors.black, fontSize: 8, fontFamily: 'Roboto'),
+          titleLarge: TextStyle(color: Colors.black, fontSize: 24, fontFamily: 'Times New Roman'),
+          titleMedium: TextStyle(color: Colors.black, fontSize: 18, fontFamily: 'Times New Roman'),
+          titleSmall: TextStyle(color: Colors.black, fontSize: 14, fontFamily: 'Times New Roman'),
+        )
       ),
       home: const MyHomePage(),
     );

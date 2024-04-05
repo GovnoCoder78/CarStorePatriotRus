@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
-
+import 'package:rus_cars_list/pages/app_bar.dart';
 class AppBarM extends StatelessWidget {
   const AppBarM({super.key});
 
@@ -31,14 +31,7 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Отечественный автопром',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: const Color.fromARGB(100, 220, 124, 124),
-        centerTitle: true,
-      ),
+      appBar: MainAppBar(),
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50),

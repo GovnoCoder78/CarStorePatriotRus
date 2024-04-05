@@ -101,17 +101,7 @@ List<Cars> carsList = [
   Cars(
       5,
       'UAZ Patriot Classic',
-<<<<<<< HEAD
-      [
-        'Внедорожник, '
-            "1980 кг",
-        "бензиновый",
-        "2,7",
-        "150",
-        "14,5",
-        "механическая"
-      ],
-=======
+
       ['Внедорожник',
       "1980 кг",
       "бензиновый",
@@ -119,7 +109,7 @@ List<Cars> carsList = [
       "150",
       "14,5",
       "механическая"],
->>>>>>> b34117df4c7591ba7d9a0d265efdf84ed6da0438
+
       'https://www.youtube.com/watch?v=wtQw6LPvlPM',
       2000000,
       [
@@ -197,13 +187,11 @@ List<Cars> carsList = [
   //                                                                              "https://image-server.autospot.ru/images/1/1/0/10/1/3/1307833/resize/635x476/1307833.png"]),
 ];
 
-<<<<<<< HEAD
-List<Cars> cart = [/*carsList[0], carsList[1], carsList[2], carsList[2], carsList[2], carsList[2], carsList[2], carsList[2]*/];
-=======
+
 List<Cars> cart = [
 
 ];
->>>>>>> b34117df4c7591ba7d9a0d265efdf84ed6da0438
+
 
 List<Cars> favorite = [];
 

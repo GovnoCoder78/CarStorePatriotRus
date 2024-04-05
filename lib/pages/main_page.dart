@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
+import 'package:rus_cars_list/pages/app_bar.dart';
 import 'package:rus_cars_list/pages/auth_page.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
 
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
-
+  
   @override
   State<MainPage> createState() => _MainPageState();
 }
@@ -14,26 +16,13 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+  final theme = Theme.of(context).textTheme;
+
     return Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LogInPage()));
-                },
-                icon: Icon(Icons.login))
-          ],
-          title: const Text(
-            'Отечественный автопром',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          backgroundColor: const Color.fromARGB(100, 220, 124, 124),
-          centerTitle: true,
-        ),
-        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
+        appBar: MainAppBar(),
+        backgroundColor: Color.fromARGB(99, 255, 255, 255),
         body: Card(
-            color: const Color.fromARGB(100, 211, 211, 211),
+            color: Color.fromARGB(98, 255, 255, 255),
             child: Container(
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
