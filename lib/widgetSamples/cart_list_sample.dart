@@ -29,6 +29,7 @@ class _cart_list_sampleState extends State<cart_list_sample> {
           child: Column(
               children: [
             Expanded(
+              flex: 8,
                 child: Container(
                   color: const Color.fromARGB(100, 255, 255, 255),
                   alignment: Alignment.center,
@@ -52,20 +53,21 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                     ],
                   ),
                 ),
-                flex: 8),
+                ),
             Expanded(
+              flex: 2,
                 child: Container(
                   color: const Color.fromARGB(100, 255, 255, 255),
                   alignment: Alignment.centerLeft,
                   child: Row(
                     children: [
-                      Expanded(
+                      Expanded(flex: 1,
                         child: IconButton(
                           icon: const Icon(Icons.favorite),
                           color: Colors.red,
                           onPressed: null
                       ),
-                        flex: 1,
+                        
                       ),
                       Expanded(
                       child: IconButton(
@@ -103,7 +105,7 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                     ],
                   ),
                 ),
-                flex: 2
+                
             )
           ]
           ),

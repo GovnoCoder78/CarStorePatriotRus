@@ -78,67 +78,86 @@ List<Cars> carsList = [
       ],
       """это универсал в стиле кроссовер, сочетающий в себе практичность и стиль. Автомобиль имеет повышенный клиренс и защиту днища,
    что позволяет ему преодолевать легкие бездорожья. Вместительный салон и большой багажник делают Vesta SW Cross идеальным выбором для семейных поездок."""),
-  Cars(4,
+  Cars(
+      4,
       'Lada XRAY Cross',
-      ['кроссовер',
-      "1210 кг",
-      "бензиновый",
-      "1.8 л",
-      "110",
-      "10,5",
-      "механическая"],
+      [
+        'кроссовер',
+        "1210 кг",
+        "бензиновый",
+        "1.8 л",
+        "110",
+        "10,5",
+        "механическая"
+      ],
       'https://www.youtube.com/watch?v=QIwG-SQoIlU',
       1400000,
-      ["https://img-c.drive.ru/models.photos/0000/000/000/001/7f3/48d7cc3886abcf58-large.jpg",
+      [
+        "https://img-c.drive.ru/models.photos/0000/000/000/001/7f3/48d7cc3886abcf58-large.jpg",
         "https://img-c.drive.ru/models.photos/0000/000/000/001/7f5/48d7cc3886abcf58-large.jpg",
-         "https://img-c.drive.ru/models.photos/0000/000/000/001/7f4/48d7cc3886abcf58-large.jpg"],
-      """это стильный и динамичный кроссовер, оснащенный современными опциями и технологиями. Автомобиль имеет яркий дизайн и хорошую проходимость, а также оснащен системами помощи водителю и мультимедиа."""
-  ),
-  Cars(5,
+        "https://img-c.drive.ru/models.photos/0000/000/000/001/7f4/48d7cc3886abcf58-large.jpg"
+      ],
+      """это стильный и динамичный кроссовер, оснащенный современными опциями и технологиями. Автомобиль имеет яркий дизайн и хорошую проходимость, а также оснащен системами помощи водителю и мультимедиа."""),
+  Cars(
+      5,
       'UAZ Patriot Classic',
-      ['Внедорожник, '
-      "1980 кг",
-      "бензиновый",
-      "2,7",
-      "150",
-      "14,5",
-      "механическая"],
+      [
+        'Внедорожник, '
+            "1980 кг",
+        "бензиновый",
+        "2,7",
+        "150",
+        "14,5",
+        "механическая"
+      ],
       'https://www.youtube.com/watch?v=wtQw6LPvlPM',
       2000000,
-      ["https://autoreview.ru/images/Article/1593/Article_159305_860_575.jpg",
-         "https://img-c.drive.ru/models.photos/0000/000/000/000/e33/48d4698eb8b3e2ac-large.jpg",
-       "https://img-c.drive.ru/models.photos/0000/000/000/000/e31/48d4698eb8b3e2ac-large.jpg"],
-  """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью."""),
-  Cars(6,
+      [
+        "https://autoreview.ru/images/Article/1593/Article_159305_860_575.jpg",
+        "https://img-c.drive.ru/models.photos/0000/000/000/000/e33/48d4698eb8b3e2ac-large.jpg",
+        "https://img-c.drive.ru/models.photos/0000/000/000/000/e31/48d4698eb8b3e2ac-large.jpg"
+      ],
+      """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью."""),
+  Cars(
+      6,
       'UAZ Patriot Sport',
-['Внедорожник',
-"1980 кг",
-"бензиновый",
-"2,7",
-"150",
-"14,5",
-"автоматическая"],
-'https://www.youtube.com/watch?v=wtQw6LPvlPM',
-2300000,
-["https://images.drive.ru/i/0/60ffe49cf5a4a038d11cdfac.jpg",
-"https://img-c.drive.ru/models.photos/3840/000/000/001/f66/88ccefeb22b02cac-large.jpg",
-"https://img-c.drive.ru/models.photos/3840/000/000/001/f67/88ccefeb22b02cac-large.jpg"],
- """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью.""" ),
-  Cars(7,
+      [
+        'Внедорожник',
+        "1980 кг",
+        "бензиновый",
+        "2,7",
+        "150",
+        "14,5",
+        "автоматическая"
+      ],
+      'https://www.youtube.com/watch?v=wtQw6LPvlPM',
+      2300000,
+      [
+        "https://images.drive.ru/i/0/60ffe49cf5a4a038d11cdfac.jpg",
+        "https://img-c.drive.ru/models.photos/3840/000/000/001/f66/88ccefeb22b02cac-large.jpg",
+        "https://img-c.drive.ru/models.photos/3840/000/000/001/f67/88ccefeb22b02cac-large.jpg"
+      ],
+      """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью."""),
+  Cars(
+      7,
       'UAZ Pickup',
-      ['Грузовик',
-      "2130 кг",
-      "дизельный",
-      "2,2",
-      "112",
-      "15,5",
-      "механическая"],
+      [
+        'Грузовик',
+        "2130 кг",
+        "дизельный",
+        "2,2",
+        "112",
+        "15,5",
+        "механическая"
+      ],
       'https://www.youtube.com/watch?v=mdyHrOLQfOo',
       1900000,
-      ["https://images.drive.ru/i/0/5c5becabec05c44d7e000059.jpg",
-       "http://cdn.motorpage.ru/Photos/800/1AC2.jpg",
-     "https://avto-city.ru/images/uaz/pikap/2.png"],
-  """это грузовик, предназначенный для перевозки грузов и оснащенный прочным кузовом и мощным двигателем. Автомобиль имеет высокую проходимость и может использоваться для работы в сложных условиях.""")
+      [
+        "https://images.drive.ru/i/0/5c5becabec05c44d7e000059.jpg",
+        "http://cdn.motorpage.ru/Photos/800/1AC2.jpg",
+        "https://avto-city.ru/images/uaz/pikap/2.png"
+      ],
+      """это грузовик, предназначенный для перевозки грузов и оснащенный прочным кузовом и мощным двигателем. Автомобиль имеет высокую проходимость и может использоваться для работы в сложных условиях.""")
   // Cars(8, 'UAZ Profi', 'Фургон, 2.7 л, 5МТ, 150 л.с.', 3400000,["https://uaz-ekb.ru/public/cat/cars/132-kupit-uaz-profi-furgon-2021-modelnogo-goda.jpg",
   //                                                               "https://www.uaz.ru/data/uaz/assets/00000000332.jpg?key=contain",
   //                                                               "https://cdnstatic.rg.ru/crop1300x868/uploads/images/205/59/22/01.jpg"] ),
@@ -168,9 +187,7 @@ List<Cars> carsList = [
   //                                                                              "https://image-server.autospot.ru/images/1/1/0/10/1/3/1307833/resize/635x476/1307833.png"]),
 ];
 
-List<Cars> cart = [
-  carsList[0], carsList[1], carsList[2]
-];
+List<Cars> cart = [/*carsList[0], carsList[1], carsList[2], carsList[2], carsList[2], carsList[2], carsList[2], carsList[2]*/];
 
 List<Cars> favorite = [];
 

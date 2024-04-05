@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
+import 'package:rus_cars_list/pages/auth_page.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
-import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,6 +16,14 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LogInPage()));
+                },
+                icon: Icon(Icons.login))
+          ],
           title: const Text(
             'Отечественный автопром',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

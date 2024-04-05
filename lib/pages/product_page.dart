@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rus_cars_list/main.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
