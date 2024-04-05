@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const Cart(),
     const MainPage()
   ];
+
   @override
   Widget build(BuildContext context) => Scaffold(
       body: openPage[selectedIndex],

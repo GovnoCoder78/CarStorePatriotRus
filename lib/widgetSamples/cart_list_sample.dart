@@ -42,7 +42,9 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                       Expanded(
                           child: Column(
                         children: [
-                          Text(addedCar.name),
+                          Text(addedCar.name,
+                          style: TextStyle(fontSize: 22,),
+                          ),
                           Text('${addedCar.price.toString()} ${"₽"}',
                           style: TextStyle(fontSize: 22),)
                         ],
@@ -57,24 +59,42 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                   alignment: Alignment.centerLeft,
                   child: Row(
                     children: [
-                      IconButton(
-                        icon: const Icon(Icons.favorite),
-                        color: Colors.red,
-                        onPressed: null
+                      Expanded(
+                        child: IconButton(
+                          icon: const Icon(Icons.favorite),
+                          color: Colors.red,
+                          onPressed: null
                       ),
-                      IconButton(
+                        flex: 1,
+                      ),
+                      Expanded(
+                      child: IconButton(
                         onPressed: null,
                         icon: const Icon(Icons.delete)
                       ),
-                      InputQty(
-                        minVal: 0,
-                        initVal: 0,
-                        maxVal: 1000,
-                        steps: 1,
-                        onQtyChanged: (val){
-                          print(val);
-                        },
+                      flex: 1
+                      ),
+                      Expanded(
+                        child: InputQty(
+                          minVal: 1,
+                          initVal: 1,
+                          maxVal: 1000,
+                          steps: 1,
+                          onQtyChanged: (val){
+                            print(val);
+                          },
                         qtyFormProps: QtyFormProps(enableTyping: false),
+                      ),
+                        flex: 2,
+                      ),
+                      Expanded(
+                        child: Container(
+                        padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                        child: ElevatedButton(onPressed: null,
+                        child: Text("Купить")
+                        )
+                        ),
+                      flex: 4,
                       )
                     ],
                   ),
@@ -87,3 +107,18 @@ class _cart_list_sampleState extends State<cart_list_sample> {
     );
   }
 }
+
+//кнопка для истории покупок
+// ElevatedButton(onPressed: null,
+// child: Container(
+// child: Column(
+// children: [
+// Expanded(child: Text("Покупки"),
+// flex: 1,
+// ),
+// Expanded(child: Icon(Icons.shopping_bag),
+// flex: 2,
+// )
+// ],
+// ),
+// ))
