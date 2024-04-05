@@ -69,7 +69,11 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                       ),
                       Expanded(
                       child: IconButton(
-                        onPressed: null,
+                        onPressed: () {
+                          setState(() {
+                            cart.remove(cart[carId]);
+                            });
+                          },
                         icon: const Icon(Icons.delete)
                       ),
                       flex: 1
@@ -106,6 +110,10 @@ class _cart_list_sampleState extends State<cart_list_sample> {
         )
     );
   }
+
+void update(){
+    setState(() {});
+}
 }
 
 //кнопка для истории покупок
