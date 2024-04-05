@@ -10,10 +10,10 @@ class MainPageGridView extends StatefulWidget {
   State<MainPageGridView> createState() => _MyMainPageGridViewState(car, onPressed);
 }
 
-class _MyMainPageGridViewState extends State<MainPageGridView> {
+class _MyMainPageGridViewState extends State<MainPageGridView>{
   Cars car;
-  VoidCallback onPressed;
   bool isClick = false;
+  VoidCallback onPressed;
   _MyMainPageGridViewState(this.car, this.onPressed);
 
   @override
@@ -87,3 +87,5 @@ class _MyMainPageGridViewState extends State<MainPageGridView> {
             ])));
   }
 }
+
+
