@@ -52,7 +52,7 @@ class MainyAppBarState extends State<MainAppBar> {
           ],
           title: Text(
             'Отечественный автопром',
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.labelLarge,
           ),
           backgroundColor: const Color.fromARGB(99, 255, 255, 255),
           centerTitle: true,

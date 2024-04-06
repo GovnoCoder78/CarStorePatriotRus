@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/pages/main_page.dart';
 import 'package:rus_cars_list/pages/favorite.dart';
 import 'package:rus_cars_list/pages/cart.dart';
+import 'package:rus_cars_list/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +10,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return MaterialApp(
       title: 'Российские автомобили',
       theme: ThemeData(
@@ -48,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const MainPage(),
     FavoritePage(),
     const Cart(),
-    const MainPage()
+    const UserPage()
   ];
 
   @override

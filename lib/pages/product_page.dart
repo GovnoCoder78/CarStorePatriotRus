@@ -29,7 +29,7 @@ class _CarCardState extends State<CarCard> {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
         appBar: const MainAppBar(),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Stack(children: [
           ListView(
             children: <Widget>[
@@ -37,7 +37,7 @@ class _CarCardState extends State<CarCard> {
                 height: 320,
                 child: Swiper(
                     itemCount: car.imagePath.length,
-                    // carsList[ImageSwiper.carId].imagePath.length ,
+                    
                     itemBuilder: (BuildContext context, int index) {
                       return Image.network(
                         car.imagePath[index],
@@ -46,184 +46,190 @@ class _CarCardState extends State<CarCard> {
                     }),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                    Text(
-                      car.name,
-                      textAlign: TextAlign.left,
-                      style: theme.labelLarge,
-                    ),
-                    RichText(
-                        textAlign: TextAlign.left,
-                        text: TextSpan(
-                          text: car.price.toString(),
-                          style: theme.titleLarge,
-                          children: [
-                            TextSpan(
-                              text: ' ₽',
-                              style: theme.titleLarge,
-                            )
-                          ],
-                        )),
-                    Container(
-                        alignment: Alignment.bottomLeft,
-                        height: 50,
-                        child: Text(
-                          'Описание',
+                        Text(
+                          car.name,
                           textAlign: TextAlign.left,
-                          style: theme.titleLarge,
-                        )),
-                    Container(
-                      height: 80,
-                      child: ListView(children: [
-                        Text(car.description, style: theme.labelMedium),
-                      ]),
-                    ),
-                    Container(
-                        height: 50,
-                        alignment: Alignment.bottomLeft,
-                        child: Text('Характеристики',
+                          style: theme.labelLarge,
+                        ),
+                        RichText(
                             textAlign: TextAlign.left,
-                            style: theme.titleLarge)),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Table(
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
-                        border: TableBorder.all(color: Colors.black),
-                        children: List<TableRow>.generate(
-                            carsList[0].characteristics.length, (index) {
-                          final char = carIndex;
-                          return TableRow(children: [
-                            Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Text(
-                                  characteristicName[index],
-                                  textAlign: TextAlign.center,
-                                  style: theme.labelMedium,
-                                )),
-                            Padding(padding: const EdgeInsets.all(5),
-                            child: Text(carsList[char].characteristics[index], textAlign: TextAlign.center,style: theme.titleMedium,),)
-                          ]);
-                        }),
-                      ),
-                    ),
-                    // Container(
-                    //   color: const Color.fromARGB(105, 255, 255, 255),
-                    //   child: Table(
-                    //     defaultVerticalAlignment:
-                    //         TableCellVerticalAlignment.middle,
-                    //     children: [
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[0],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[0],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[1],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[1],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[2],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[2],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[3],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[3],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[4],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[4],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[5],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[5],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //       TableRow(children: [
-                    //         Text(
-                    //           textAlign: TextAlign.left,
-                    //           characteristicName[6],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         ),
-                    //         Text(
-                    //           textAlign: TextAlign.center,
-                    //           car.characteristics[6],
-                    //           style: const TextStyle(
-                    //               fontSize: 22, color: Colors.white),
-                    //         )
-                    //       ]),
-                    //     ],
-                    //   ),
-                    // ),
-                    Container(
-                      child: YoutubePlayer(
-                        controller: _controller,
-                        aspectRatio: 16 / 9,
-                      ),
-                    )
-                  ]))
+                            text: TextSpan(
+                              text: car.price.toString(),
+                              style: theme.titleLarge,
+                              children: [
+                                TextSpan(
+                                  text: ' ₽',
+                                  style: theme.titleLarge,
+                                )
+                              ],
+                            )),
+                        Container(
+                            alignment: Alignment.bottomLeft,
+                            height: 50,
+                            child: Text(
+                              'Описание',
+                              textAlign: TextAlign.left,
+                              style: theme.titleLarge,
+                            )),
+                        Container(
+                          height: 80,
+                          child: ListView(children: [
+                            Text(car.description, style: theme.labelMedium),
+                          ]),
+                        ),
+                        Container(
+                            height: 50,
+                            alignment: Alignment.bottomLeft,
+                            child: Text('Характеристики',
+                                textAlign: TextAlign.left,
+                                style: theme.titleLarge)),
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Table(
+                            defaultVerticalAlignment:
+                                TableCellVerticalAlignment.middle,
+                            
+                            children: List<TableRow>.generate(
+                                carsList[0].characteristics.length, (index) {
+                              final char = carIndex;
+                              return TableRow(children: [
+                                Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Text(
+                                      characteristicName[index],
+                                      textAlign: TextAlign.center,
+                                      style: theme.labelMedium,
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Text(
+                                    carsList[char].characteristics[index],
+                                    textAlign: TextAlign.center,
+                                    style: theme.titleMedium,
+                                  ),
+                                )
+                              ]);
+                            }),
+                          ),
+                        ),
+                        // Container(
+                        //   color: const Color.fromARGB(105, 255, 255, 255),
+                        //   child: Table(
+                        //     defaultVerticalAlignment:
+                        //         TableCellVerticalAlignment.middle,
+                        //     children: [
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[0],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[0],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[1],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[1],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[2],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[2],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[3],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[3],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[4],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[4],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[5],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[5],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //       TableRow(children: [
+                        //         Text(
+                        //           textAlign: TextAlign.left,
+                        //           characteristicName[6],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         ),
+                        //         Text(
+                        //           textAlign: TextAlign.center,
+                        //           car.characteristics[6],
+                        //           style: const TextStyle(
+                        //               fontSize: 22, color: Colors.white),
+                        //         )
+                        //       ]),
+                        //     ],
+                        //   ),
+                        // ),
+                        Container(
+                          child: YoutubePlayer(
+                            controller: _controller,
+                            aspectRatio: 16 / 9,
+                          ),
+                        )
+                      ]))
             ],
           ),
           Container(

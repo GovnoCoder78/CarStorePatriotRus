@@ -20,7 +20,7 @@ class _MainPageState extends State<MainPage> {
     final theme = Theme.of(context).textTheme;
 
     return Scaffold(
-        appBar: MainAppBar(),
+        appBar: const MainAppBar(),
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Card(
             color: Color.fromARGB(255, 255, 255, 255),

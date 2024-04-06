@@ -31,7 +31,7 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(),
+      appBar: const  MainAppBar(),
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50),
