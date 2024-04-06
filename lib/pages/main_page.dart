@@ -5,7 +5,7 @@ import 'package:rus_cars_list/pages/auth_page.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
 
-
+bool f = true;
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
   

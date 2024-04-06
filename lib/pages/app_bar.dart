@@ -24,11 +24,12 @@ class MainBar extends AppBar {
         );
     
   }
-  Size get PreferredSize => Size.fromHeight(height);
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 
 }
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const MainAppBar({Key? key}) ;
+  const MainAppBar({super.key}) ;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

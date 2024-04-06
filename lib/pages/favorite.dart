@@ -54,9 +54,9 @@ class _FavoritePageState extends State<FavoritePage> {
                         return Container(
                           padding: const EdgeInsets.symmetric(vertical: 30),
                             decoration: BoxDecoration(
-                              
+                              border: Border.all(width: 3, color: const Color.fromARGB(255, 82, 82, 82)),
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 255, 255, 255),
                               
                             ),
                             
