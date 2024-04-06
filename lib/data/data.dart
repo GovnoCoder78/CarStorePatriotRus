@@ -1,8 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:rus_cars_list/widgetSamples/MyGridView.dart';
-// import 'package:rus_cars_list/pages/MainPage.dart';
-// import 'package:rus_cars_list/pages/CarCard.dart';
-
 class Cars {
   final int id;
   final String name;

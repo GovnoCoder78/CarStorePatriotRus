@@ -7,10 +7,11 @@ class MainPageGridView extends StatefulWidget {
   MainPageGridView({super.key, required this.car, required this.onPressed});
 
   @override
-  State<MainPageGridView> createState() => _MyMainPageGridViewState(car, onPressed);
+  State<MainPageGridView> createState() =>
+      _MyMainPageGridViewState(car, onPressed);
 }
 
-class _MyMainPageGridViewState extends State<MainPageGridView>{
+class _MyMainPageGridViewState extends State<MainPageGridView> {
   Cars car;
   bool isClick = false;
   VoidCallback onPressed;
@@ -32,7 +33,7 @@ class _MyMainPageGridViewState extends State<MainPageGridView>{
                 child: Container(
                     child: Image.network(
                   car.imagePath[0],
-                  fit: BoxFit.fill,
+                  //fit: BoxFit.fill,
                 ))),
             Expanded(
                 flex: 2,
@@ -75,10 +76,9 @@ class _MyMainPageGridViewState extends State<MainPageGridView>{
                         bool isUnic = true;
                         setState(() => isClick = !isClick);
                         for (int i = 0; i < favorite.length; ++i) {
-                          if (i > 0 && favorite[i].id == favorite[i - 1].id){
+                          if (i > 0 && favorite[i].id == favorite[i - 1].id) {
                             isUnic = false;
                           }
-         
                         }
                         if (isUnic != false) favorite.add(car);
                       },
@@ -89,5 +89,3 @@ class _MyMainPageGridViewState extends State<MainPageGridView>{
     );
   }
 }
-
-
