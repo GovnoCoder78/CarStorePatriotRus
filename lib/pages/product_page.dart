@@ -4,30 +4,29 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CarCard extends StatefulWidget {
-  final int carIndex;
-  const CarCard({super.key, required this.carIndex});
+  Cars carOnCard;
+  CarCard({super.key, required this.carOnCard});
 
   @override
-  State<CarCard> createState() => _CarCardState(carIndex);
+  State<CarCard> createState() => _CarCardState(carOnCard);
 }
 
 class _CarCardState extends State<CarCard> {
-  final int carIndex;
-  _CarCardState(this.carIndex);
+  Cars carOnCard;
+  _CarCardState(this.carOnCard);
   @override
   Widget build(BuildContext context) {
-    Cars car = carsList[carIndex];
+    //Cars car = carsList[carIndex];
     String? videoId;
-    videoId = YoutubePlayerController.convertUrlToId(car.videoUrl);
+    videoId = YoutubePlayerController.convertUrlToId(carOnCard.videoUrl);
     final _controller = YoutubePlayerController();
     _controller.cueVideoById(videoId: videoId.toString());
-    videoId = YoutubePlayerController.convertUrlToId(car.videoUrl);
+    videoId = YoutubePlayerController.convertUrlToId(carOnCard.videoUrl);
     _controller.loadVideoById(videoId: videoId.toString());
-    bool click = false;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(car.name,
+        title: Text(carOnCard.name,
         style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold
@@ -44,10 +43,10 @@ class _CarCardState extends State<CarCard> {
         Container(
           height: 320,
           child: Swiper(
-           itemCount: car.imagePath.length,
+           itemCount: carOnCard.imagePath.length,
            // carsList[ImageSwiper.carId].imagePath.length ,
            itemBuilder: (BuildContext context, int index){
-             return Image.network(car.imagePath[index],
+             return Image.network(carOnCard.imagePath[index],
                                   fit: BoxFit.fill,);
             }
           ),
@@ -56,7 +55,7 @@ class _CarCardState extends State<CarCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  Text(car.name,
+                  Text(carOnCard.name,
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                    fontSize: 28,
@@ -66,7 +65,7 @@ class _CarCardState extends State<CarCard> {
                 RichText(
                 textAlign: TextAlign.left,
                 text: TextSpan(
-                  text: car.price.toString(),
+                  text: carOnCard.price.toString(),
                   style: const TextStyle(
                   fontSize: 32,
                    color: Colors.white
@@ -93,7 +92,7 @@ class _CarCardState extends State<CarCard> {
                 height: 80,
                   child: ListView(
                     children: [
-                      Text(car.description,
+                      Text(carOnCard.description,
                         style: const TextStyle(fontSize: 22,
                         color: Colors.white)
                       ),
@@ -126,7 +125,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                           Text(
                             textAlign: TextAlign.center,
-                              car.characteristics[0],
+                            carOnCard.characteristics[0],
                               style: const TextStyle(
                                 fontSize: 22,
                                 color: Colors.white
@@ -146,7 +145,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[1],
+                              carOnCard.characteristics[1],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -166,7 +165,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[2],
+                              carOnCard.characteristics[2],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -186,7 +185,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[3],
+                              carOnCard.characteristics[3],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -206,7 +205,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[4],
+                              carOnCard.characteristics[4],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -226,7 +225,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[5],
+                              carOnCard.characteristics[5],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -246,7 +245,7 @@ class _CarCardState extends State<CarCard> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              car.characteristics[6],
+                              carOnCard.characteristics[6],
                               style: const TextStyle(
                                   fontSize: 22,
                                   color: Colors.white
@@ -280,7 +279,7 @@ class _CarCardState extends State<CarCard> {
                   child: Text('Добавить в корзину'),
                 ),
                 onPressed: () {
-                  cart.add(carsList[carIndex]);
+                  cart.add(carOnCard);
                 },
               )
             ),
@@ -290,11 +289,9 @@ class _CarCardState extends State<CarCard> {
             Expanded(
               flex: 1,
               child: ElevatedButton(
-                child: Container(
                   child: Icon(Icons.favorite,
-                  color: click ? Colors.red : Colors.grey
+                    color: carOnCard.isFavorite ? Colors.red : Colors.grey
                 ),
-            ),
                 onPressed: () {
                   setState(() {() {
                     bool isUnic = true;
@@ -302,13 +299,13 @@ class _CarCardState extends State<CarCard> {
                       if (i > 0 && favorite[i].id == favorite[i - 1].id)
                         isUnic = false;
                     }
-                    if (isUnic) favorite.add(car);
+                    if (isUnic) favorite.add(carOnCard);
                   };
-                    click = !click;
+                  carOnCard.isFavorite = !carOnCard.isFavorite;
                   });
                 },
               )
-              )
+          )
 
     ],
             )

@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    CarCard(carIndex: index)),
+                                    CarCard(carOnCard: carsList[index],)),
                           );
                         });
                   }),

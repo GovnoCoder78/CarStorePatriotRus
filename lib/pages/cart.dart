@@ -37,7 +37,7 @@ class _CartState extends State<Cart> {
                         pressed:(){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (BuildContext context) => CarCard(carIndex: index)),
+                            MaterialPageRoute(builder: (BuildContext context) => CarCard(carOnCard: carsList[index])),
                           );
                         }
                     );

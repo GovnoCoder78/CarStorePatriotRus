@@ -12,7 +12,6 @@ class MainPageGridView extends StatefulWidget {
 
 class _MyMainPageGridViewState extends State<MainPageGridView>{
   Cars car;
-  bool isClick = false;
   VoidCallback onPressed;
   _MyMainPageGridViewState(this.car, this.onPressed);
 
@@ -69,10 +68,10 @@ class _MyMainPageGridViewState extends State<MainPageGridView>{
                       flex: 1,
                       child: IconButton(
                         icon: const Icon(Icons.favorite),
-                        color: isClick ? Colors.red : Colors.grey,
+                        color: car.isFavorite ? Colors.red : Colors.grey,
                         onPressed: () {
                           bool isUnic = true;
-                          setState(() => isClick = !isClick);
+                          setState(() => car.isFavorite = !car.isFavorite);
                           for (int i = 0; i < favorite.length; ++i) {
                             if (i > 0 && favorite[i].id == favorite[i - 1].id)
                               isUnic = false;
