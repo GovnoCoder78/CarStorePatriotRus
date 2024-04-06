@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rus_cars_list/pages/app_bar.dart';
 import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
@@ -15,20 +16,11 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Корзина',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-          backgroundColor: Color.fromARGB(100, 220, 124, 124),
-          centerTitle: true,
-        ),
-        backgroundColor: Color.fromARGB(100, 211, 211, 211),
+        appBar: MainAppBar(),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Card(
-            color: Color.fromARGB(100, 211, 211, 211),
-            child:Container(
+            color: Color.fromARGB(253, 255, 255, 255),
+            child: Container(
               child: ListView.builder(
                   itemCount: cart.length,
                   itemBuilder: (BuildContext context, int index){

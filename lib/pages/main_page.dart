@@ -6,9 +6,10 @@ import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
 
 bool f = true;
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
-  
+
   @override
   State<MainPage> createState() => _MainPageState();
 }
@@ -16,13 +17,13 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-  final theme = Theme.of(context).textTheme;
+    final theme = Theme.of(context).textTheme;
 
     return Scaffold(
-        appBar: MainAppBar(),
-        backgroundColor: Color.fromARGB(99, 255, 255, 255),
+        appBar: const MainAppBar(),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Card(
-            color: Color.fromARGB(98, 255, 255, 255),
+            color: Color.fromARGB(255, 255, 255, 255),
             child: Container(
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
