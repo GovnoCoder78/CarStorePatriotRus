@@ -12,6 +12,7 @@ class Cars {
   final String description;
   final String videoUrl;
   bool isFavorite;
+  int count = 0;
   Cars(this.id, this.name, this.characteristics, this.videoUrl, this.price,
       this.imagePath, this.description, this.isFavorite);
 }

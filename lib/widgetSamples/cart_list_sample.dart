@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:input_quantity/input_quantity.dart';
+import 'package:rus_cars_list/pages/cart.dart';
 
 class cart_list_sample extends StatefulWidget {
   final VoidCallback pressed;
@@ -16,7 +17,9 @@ class cart_list_sample extends StatefulWidget {
 class _cart_list_sampleState extends State<cart_list_sample> {
   final VoidCallback pressed;
   final int carId;
+
   _cart_list_sampleState(this.pressed, this.carId);
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,96 +28,112 @@ class _cart_list_sampleState extends State<cart_list_sample> {
         onTap: pressed,
         child: Container(
           padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-          height: MediaQuery.of(context).size.width / 2,
+          height: MediaQuery
+              .of(context)
+              .size
+              .width / 2,
           child: Column(
               children: [
-            Expanded(
-                child: Container(
-                  color: const Color.fromARGB(100, 255, 255, 255),
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Image.network(addedCar.imagePath[0],
-                        fit: BoxFit.fill,),
-                        flex: 1,
-                      ),
-                      Expanded(
-                          child: Column(
+                Expanded(
+                    child: Container(
+                      color: const Color.fromARGB(100, 255, 255, 255),
+                      alignment: Alignment.center,
+                      child: Row(
                         children: [
-                          Text(addedCar.name,
-                          style: TextStyle(fontSize: 22,),
+                          Expanded(
+                            child: Image.network(addedCar.imagePath[0],
+                              fit: BoxFit.fill,),
+                            flex: 1,
                           ),
-                          Text('${addedCar.price.toString()} ${"₽"}',
-                          style: TextStyle(fontSize: 22),)
+                          Expanded(
+                              child: Column(
+                                children: [
+                                  Text(addedCar.name,
+                                    style: TextStyle(fontSize: 22,),
+                                  ),
+                                  Text('${addedCar.price.toString()} ${"₽"}',
+                                    style: TextStyle(fontSize: 22),)
+                                ],
+                              ))
                         ],
-                      ))
-                    ],
-                  ),
-                ),
-                flex: 8),
-            Expanded(
-                child: Container(
-                  color: const Color.fromARGB(100, 255, 255, 255),
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: IconButton(
-                          icon: const Icon(Icons.favorite),
-                          color: Colors.red,
-                          onPressed: null
                       ),
-                        flex: 1,
+                    ),
+                    flex: 8),
+                Expanded(
+                    child: Container(
+                      color: const Color.fromARGB(100, 255, 255, 255),
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: IconButton(
+                                icon: const Icon(Icons.favorite),
+                                color: Colors.red,
+                                onPressed: null
+                            ),
+                            flex: 1,
+                          ),
+                          Expanded(
+                              child: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      cart.remove(cart[carId]);
+                                    });
+
+                                  },
+                                  icon: const Icon(Icons.delete)
+                              ),
+                              flex: 1
+                          ),
+                          Expanded(
+                            child: InputQty(
+                              minVal: 1,
+                              initVal: 1,
+                              maxVal: 1000,
+                              steps: 1,
+                              onQtyChanged: (val) {
+                                print(val);
+                                addedCar.count = val;
+                              },
+                              qtyFormProps: QtyFormProps(enableTyping: false),
+                            ),
+                            flex: 2,
+                          ),
+                          Expanded(
+                            child: Container(
+                                padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                child: ElevatedButton(onPressed: null,
+                                    child: Text("Купить")
+                                )
+                            ),
+                            flex: 4,
+                          )
+                        ],
                       ),
-                      Expanded(
-                      child: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            cart.remove(cart[carId]);
-                            });
-                          },
-                        icon: const Icon(Icons.delete)
-                      ),
-                      flex: 1
-                      ),
-                      Expanded(
-                        child: InputQty(
-                          minVal: 1,
-                          initVal: 1,
-                          maxVal: 1000,
-                          steps: 1,
-                          onQtyChanged: (val){
-                            print(val);
-                          },
-                        qtyFormProps: QtyFormProps(enableTyping: false),
-                      ),
-                        flex: 2,
-                      ),
-                      Expanded(
-                        child: Container(
-                        padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                        child: ElevatedButton(onPressed: null,
-                        child: Text("Купить")
-                        )
-                        ),
-                      flex: 4,
-                      )
-                    ],
-                  ),
-                ),
-                flex: 2
-            )
-          ]
+                    ),
+                    flex: 2
+                )
+              ]
           ),
         )
     );
   }
 
-void update(){
-    setState(() {});
+bool deletedCar(){
+    for(int i = 0; i < cart.length - 1; i++){
+      if(cart[i].id == 0){
+        cart[i] = cart[i + 1];
+        return true;
+      }
+    }
+    return false;
 }
 }
+//
+// void arrayIsEmpty(){
+//
+// }
+
 
 //кнопка для истории покупок
 // ElevatedButton(onPressed: null,
@@ -130,3 +149,4 @@ void update(){
 // ],
 // ),
 // ))
+
