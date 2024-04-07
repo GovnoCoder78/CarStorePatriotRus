@@ -40,7 +40,7 @@ class _CartState extends State<Cart> {
                             context,
                             MaterialPageRoute(builder: (BuildContext context) => CarCard(carOnCard: carsList[index])),
                           );
-                        }
+                        },
                     );
                   }
               ),

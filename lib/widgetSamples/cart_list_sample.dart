@@ -3,10 +3,11 @@ import 'package:rus_cars_list/data/data.dart';
 import 'package:input_quantity/input_quantity.dart';
 import 'package:rus_cars_list/pages/cart.dart';
 
+
 class cart_list_sample extends StatefulWidget {
   final VoidCallback pressed;
   final int carId;
-  const cart_list_sample(
+  cart_list_sample(
       {super.key, required this.pressed, required this.carId});
 
   @override
@@ -17,7 +18,6 @@ class cart_list_sample extends StatefulWidget {
 class _cart_list_sampleState extends State<cart_list_sample> {
   final VoidCallback pressed;
   final int carId;
-
   _cart_list_sampleState(this.pressed, this.carId);
 
 
@@ -79,7 +79,7 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                                     setState(() {
                                       cart.remove(cart[carId]);
                                     });
-
+                                    deleteCar();
                                   },
                                   icon: const Icon(Icons.delete)
                               ),
@@ -119,15 +119,25 @@ class _cart_list_sampleState extends State<cart_list_sample> {
     );
   }
 
-bool deletedCar(){
+  void deleteCar(){
     for(int i = 0; i < cart.length - 1; i++){
       if(cart[i].id == 0){
+        if(cart.length == 1){
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => Cart()));
+          break;
+        }
         cart[i] = cart[i + 1];
-        return true;
+        cart.remove(cart[i + 1]);
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => Cart()));
       }
     }
-    return false;
-}
+    // if(cart.isEmpty){
+    //   Navigator.pushReplacement(context,
+    //       MaterialPageRoute(builder: (context) => Cart()));
+    // }
+  }
 }
 //
 // void arrayIsEmpty(){

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/pages/main_page.dart';
 import 'package:rus_cars_list/pages/favorite.dart';
 import 'package:rus_cars_list/pages/cart.dart';
+import 'package:rus_cars_list/pages/profile_pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,16 +28,16 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   final openPage = [
     const MainPage(),
     FavoritePage(),
-    const Cart(),
-    const MainPage()
+    Cart(),
+    UserPage()
   ];
 
   @override
