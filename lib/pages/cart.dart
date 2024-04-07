@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:rus_cars_list/pages/app_bar.dart';
 import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 import 'package:rus_cars_list/data/data.dart';
@@ -21,9 +22,10 @@ class _CartState extends State<Cart> {
             color: Color.fromARGB(253, 255, 255, 255),
             child: Column(
               children: [
-                Container(
+                SizedBox(
+                  height: 200,
                   child: ListView.builder(
-                      itemCount: cart.length,
+                      itemCount: 50,
                       itemBuilder: (BuildContext context, int index) {
                         return cart_list_sample(
                             carId: index,

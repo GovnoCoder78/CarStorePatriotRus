@@ -22,7 +22,8 @@ class _HistoryPageState extends State<HistoryPage> {
           itemCount: userHistoryList.length,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(userHistoryList[0].car.name),
+              title: Text(userHistoryList[index].car.name),
+              subtitle: Text(userHistoryList[index].purchaseDate.toString()),
             );
           },
         ),

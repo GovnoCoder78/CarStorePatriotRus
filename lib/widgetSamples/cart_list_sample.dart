@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
 import 'package:input_quantity/input_quantity.dart';
+import 'package:rus_cars_list/data/userdata.dart';
 
 class cart_list_sample extends StatefulWidget {
   final VoidCallback pressed;
@@ -21,17 +22,18 @@ class _cart_list_sampleState extends State<cart_list_sample> {
   @override
   Widget build(BuildContext context) {
     Cars addedCar = cart[carId];
+    final theme = Theme.of(context).textTheme;
     return GestureDetector(
         onTap: pressed,
-        child: Container(
-          padding: EdgeInsets.only(bottom: 20),
-          height: 100,
+        child: SizedBox(
+          //padding: EdgeInsets.only(bottom: 20),
+          height: 200,
           child: Column(children: [
             Expanded(
               flex: 8,
-              child: Container(
-                color: const Color.fromARGB(100, 255, 255, 255),
-                alignment: Alignment.center,
+              child: SizedBox(
+                //color: const Color.fromARGB(100, 255, 255, 255),
+                //alignment: Alignment.center,
                 child: Row(
                   children: [
                     Expanded(
@@ -118,6 +120,19 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                                               border: Border.all(width: 1),
                                               borderRadius:
                                                   BorderRadius.circular(10)),
+                                          child: Column(
+                                            children: [
+                                              Expanded(
+                                                child: Text('Покупка',style: theme.labelLarge,),
+                                              ),
+                                              Expanded(child: TextButton(onPressed: (){
+                                                userHistoryList.add(UserHistory(userList[0], carsList[carId], DateTime.now()));
+                                                Navigator.pop(context);
+                                                cart.remove(cart[0]);// добавить remove from cart
+                                              },
+                                              child: Text('Купить'),),),
+                                            ],
+                                          ),
                                         ),
                                       )),
                               child: Text("Купить")),
