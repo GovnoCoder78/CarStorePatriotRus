@@ -37,7 +37,6 @@ class _CarCardState extends State<CarCard> {
                 height: 320,
                 child: Swiper(
                     itemCount: car.imagePath.length,
-                    
                     itemBuilder: (BuildContext context, int index) {
                       return Image.network(
                         car.imagePath[index],
@@ -92,7 +91,6 @@ class _CarCardState extends State<CarCard> {
                           child: Table(
                             defaultVerticalAlignment:
                                 TableCellVerticalAlignment.middle,
-                            
                             children: List<TableRow>.generate(
                                 carsList[0].characteristics.length, (index) {
                               final char = carIndex;
@@ -264,7 +262,7 @@ class _CarCardState extends State<CarCard> {
                               for (int i = 0; i < favorite.length; ++i) {
                                 if (i > 0 &&
                                     favorite[i].id == favorite[i - 1].id)
-                                  isUnic = false;
+                                  {isUnic = false;}
                               }
                               if (isUnic) favorite.add(car);
                             };
