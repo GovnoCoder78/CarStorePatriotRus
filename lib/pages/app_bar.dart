@@ -19,7 +19,7 @@ class MainBar extends AppBar {
             'Отечественный автопром',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
-          backgroundColor: const Color.fromARGB(99, 255, 255, 255),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           centerTitle: true,
         );
     
@@ -54,7 +54,7 @@ class MainyAppBarState extends State<MainAppBar> {
             'Отечественный автопром',
             style: Theme.of(context).textTheme.labelLarge,
           ),
-          backgroundColor: const Color.fromARGB(99, 255, 255, 255),
+          backgroundColor: Color.fromARGB(255, 194, 194, 194),
           centerTitle: true,
         );
   }
