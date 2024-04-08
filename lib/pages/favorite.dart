@@ -33,27 +33,21 @@ class _FavoritePageState extends State<FavoritePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Отечественный автопром',
+          'Избранное',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromARGB(100, 220, 124, 124),
         centerTitle: true,
       ),
+        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
             children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                child: const Text(
-                  'Favorite',
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
               Expanded(
                   child: ListView.builder(
-                      // itemCount: favorite.length,
+                      itemCount: favorite.length,
                       itemBuilder: (context, index) {
                         return Container(
                             decoration: BoxDecoration(

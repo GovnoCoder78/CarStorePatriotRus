@@ -16,6 +16,14 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          actions: [
+            ElevatedButton(
+            child: Text("Войти",
+              style: TextStyle(fontSize: 14,
+              fontWeight: FontWeight.bold)
+            ),
+            onPressed: null,
+          )],
           title: const Text(
             'Отечественный автопром',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

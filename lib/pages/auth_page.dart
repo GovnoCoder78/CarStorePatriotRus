@@ -16,10 +16,8 @@ class _LogInPageState extends State<LogInPage> {
     return Scaffold(
       body: Center(
         child: Container(
-
           width: MediaQuery.of(context).size.width/2,
           height: MediaQuery.of(context).size.width/2,
-
           decoration: BoxDecoration(
               border: Border.all(), borderRadius: BorderRadius.circular(25)),
           child: Padding(

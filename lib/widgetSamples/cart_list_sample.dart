@@ -145,18 +145,6 @@ class _cart_list_sampleState extends State<cart_list_sample> {
 // }
 
 
-//кнопка для истории покупок
-// ElevatedButton(onPressed: null,
-// child: Container(
-// child: Column(
-// children: [
-// Expanded(child: Text("Покупки"),
-// flex: 1,
-// ),
-// Expanded(child: Icon(Icons.shopping_bag),
-// flex: 2,
-// )
-// ],
-// ),
-// ))
+// кнопка для истории покупок
+
 
