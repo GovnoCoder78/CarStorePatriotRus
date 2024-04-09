@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rus_cars_list/pages/main_page.dart';
 import 'package:rus_cars_list/pages/favorite.dart';
 import 'package:rus_cars_list/pages/cart.dart';
-import 'package:rus_cars_list/pages/profile_page.dart';
+import 'package:rus_cars_list/pages/profile_pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,47 +10,36 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       title: 'Российские автомобили',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: const TextTheme(
-          labelLarge: TextStyle(color: Colors.black, fontSize: 24, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
-          labelMedium: TextStyle(color: Colors.black, fontSize: 18, fontFamily: 'Roboto'),
-          labelSmall: TextStyle(color: Colors.black, fontSize: 14, fontFamily: 'Roboto'),
-          bodyLarge: TextStyle(color: Colors.black, fontSize: 12, fontFamily: 'Roboto'),
-          bodyMedium: TextStyle(color: Colors.black, fontSize: 10, fontFamily: 'Roboto'),
-          bodySmall: TextStyle(color: Colors.black, fontSize: 8, fontFamily: 'Roboto'),
-          titleLarge: TextStyle(color: Colors.black, fontSize: 24, fontFamily: 'Times New Roman'),
-          titleMedium: TextStyle(color: Colors.black, fontSize: 18, fontFamily: 'Times New Roman'),
-          titleSmall: TextStyle(color: Colors.black, fontSize: 14, fontFamily: 'Times New Roman'),
-        )
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(index: 0,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  int index;
+  MyHomePage({super.key, required this.index});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState(index);
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
+  MyHomePageState(this.selectedIndex);
   final openPage = [
-    const MainPage(),
+    MainPage(),
     FavoritePage(),
-    const Cart(),
-    const UserPage()
+    Cart(),
+    UserPage()
   ];
 
   @override

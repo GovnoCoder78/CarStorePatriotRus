@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
-import 'package:rus_cars_list/pages/app_bar.dart';
 import 'package:rus_cars_list/pages/auth_page.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
-
-bool f = true;
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,13 +14,31 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).textTheme;
-
     return Scaffold(
-        appBar: const MainAppBar(),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          actions: [
+            ElevatedButton(
+            child: Text("Войти",
+              style: TextStyle(fontSize: 14,
+              fontWeight: FontWeight.bold)
+            ),
+            onPressed: () => {
+              Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(builder: (BuildContext context) => LogInPage()))
+            },
+          )],
+          title: const Text(
+            'Отечественный автопром',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: const Color.fromARGB(100, 220, 124, 124),
+          centerTitle: true,
+        ),
+        backgroundColor: const Color.fromARGB(100, 211, 211, 211),
         body: Card(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(100, 211, 211, 211),
             child: Container(
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -39,7 +54,7 @@ class _MainPageState extends State<MainPage> {
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    CarCard(carIndex: index)),
+                                    CarCard(carOnCard: carsList[index],)),
                           );
                         });
                   }),

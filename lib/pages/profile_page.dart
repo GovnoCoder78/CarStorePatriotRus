@@ -39,7 +39,7 @@ class _UserPageState extends State<UserPage> {
                 children: [
                   
                   ListTile(
-                    onTap: () =>Navigator.push(context ,MaterialPageRoute(builder: (BuildContext context) => HistoryPage(UserHistory: userHistoryList[0]))),
+                    onTap: () =>Navigator.push(context ,MaterialPageRoute(builder: (BuildContext context) => HistoryPage())),
                     title: Text('История покупок'),),
                   
                 ],
