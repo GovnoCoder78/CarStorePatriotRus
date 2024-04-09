@@ -16,6 +16,7 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text("Учетная запись",
         style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
       ),

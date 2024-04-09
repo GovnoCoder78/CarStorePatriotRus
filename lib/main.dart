@@ -19,22 +19,24 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(index: 0,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  int index;
+  MyHomePage({super.key, required this.index});
 
   @override
-  State<MyHomePage> createState() => MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState(index);
 }
 
 class MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
+  MyHomePageState(this.selectedIndex);
   final openPage = [
-    const MainPage(),
+    MainPage(),
     FavoritePage(),
     Cart(),
     UserPage()

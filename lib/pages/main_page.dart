@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rus_cars_list/data/data.dart';
+import 'package:rus_cars_list/pages/auth_page.dart';
 import 'package:rus_cars_list/widgetSamples/main_page_gridview.dart';
 import 'package:rus_cars_list/pages/product_page.dart';
-import 'package:rus_cars_list/widgetSamples/cart_list_sample.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,13 +16,18 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           actions: [
             ElevatedButton(
             child: Text("Войти",
               style: TextStyle(fontSize: 14,
               fontWeight: FontWeight.bold)
             ),
-            onPressed: null,
+            onPressed: () => {
+              Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(builder: (BuildContext context) => LogInPage()))
+            },
           )],
           title: const Text(
             'Отечественный автопром',

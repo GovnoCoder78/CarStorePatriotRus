@@ -93,7 +93,7 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                               steps: 1,
                               onQtyChanged: (val) {
                                 print(val);
-                                addedCar.count = val;
+                                cart[carId].count = val;
                               },
                               qtyFormProps: QtyFormProps(enableTyping: false),
                             ),
