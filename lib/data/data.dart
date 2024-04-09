@@ -12,9 +12,10 @@ class Cars {
   final String description;
   final String videoUrl;
   bool isFavorite;
+  bool cartSelect;
   int count = 0;
   Cars(this.id, this.name, this.characteristics, this.videoUrl, this.price,
-      this.imagePath, this.description, this.isFavorite);
+      this.imagePath, this.description, this.isFavorite, this.cartSelect);
 }
 
 List<Cars> carsList = [
@@ -38,7 +39,8 @@ List<Cars> carsList = [
         "https://img-c.drive.ru/models.photos/0000/000/000/001/369/48d61e473bac2e29-large.jpg"
       ],
       """это практичный и надежный седан, идеально подходящий для ежедневных поездок по городу. Автомобиль имеет просторный салон и большой багажник, а также оснащен необходимым набором опций для комфортной езды.""",
-  false),
+  false,
+      false),
   Cars(
       2,
       'Lada Granta Drive Active',
@@ -60,7 +62,8 @@ List<Cars> carsList = [
       ],
       """это модернизированная версия классической Гранты, отличающаяся улучшенным дизайном и более богатой комплектацией. 
                                                                                                                                                                               Автомобиль оснащен современными системами безопасности и мультимедиа, а также имеет более мощный двигатель.""",
-  false),
+  false,
+      false),
   Cars(
       3,
       'Lada Vesta SW Cross',
@@ -82,7 +85,8 @@ List<Cars> carsList = [
       ],
       """это универсал в стиле кроссовер, сочетающий в себе практичность и стиль. Автомобиль имеет повышенный клиренс и защиту днища,
    что позволяет ему преодолевать легкие бездорожья. Вместительный салон и большой багажник делают Vesta SW Cross идеальным выбором для семейных поездок.""",
-  false),
+  false,
+      false),
   Cars(4,
       'Lada XRAY Cross',
       ['кроссовер',
@@ -98,7 +102,8 @@ List<Cars> carsList = [
         "https://img-c.drive.ru/models.photos/0000/000/000/001/7f5/48d7cc3886abcf58-large.jpg",
          "https://img-c.drive.ru/models.photos/0000/000/000/001/7f4/48d7cc3886abcf58-large.jpg"],
       """это стильный и динамичный кроссовер, оснащенный современными опциями и технологиями. Автомобиль имеет яркий дизайн и хорошую проходимость, а также оснащен системами помощи водителю и мультимедиа.""",
-    false
+    false,
+      false
   ),
   Cars(5,
       'UAZ Patriot Classic',
@@ -115,7 +120,8 @@ List<Cars> carsList = [
          "https://img-c.drive.ru/models.photos/0000/000/000/000/e33/48d4698eb8b3e2ac-large.jpg",
        "https://img-c.drive.ru/models.photos/0000/000/000/000/e31/48d4698eb8b3e2ac-large.jpg"],
   """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью.""",
-  false),
+  false,
+      false),
   Cars(6,
       'UAZ Patriot Sport',
 ['Внедорожник',
@@ -131,7 +137,8 @@ List<Cars> carsList = [
 "https://img-c.drive.ru/models.photos/3840/000/000/001/f66/88ccefeb22b02cac-large.jpg",
 "https://img-c.drive.ru/models.photos/3840/000/000/001/f67/88ccefeb22b02cac-large.jpg"],
  """это классический внедорожник, известный своей надежностью и проходимостью. Автомобиль имеет простой и функциональный дизайн, а также оснащен необходимым набором опций для комфортной езды по бездорожью.""",
-  false),
+  false,
+      false),
   Cars(7,
       'UAZ Pickup',
       ['Грузовик',
@@ -147,7 +154,9 @@ List<Cars> carsList = [
        "http://cdn.motorpage.ru/Photos/800/1AC2.jpg",
      "https://avto-city.ru/images/uaz/pikap/2.png"],
   """это грузовик, предназначенный для перевозки грузов и оснащенный прочным кузовом и мощным двигателем. Автомобиль имеет высокую проходимость и может использоваться для работы в сложных условиях.""",
-  false)
+  false,
+      false
+  )
   // Cars(8, 'UAZ Profi', 'Фургон, 2.7 л, 5МТ, 150 л.с.', 3400000,["https://uaz-ekb.ru/public/cat/cars/132-kupit-uaz-profi-furgon-2021-modelnogo-goda.jpg",
   //                                                               "https://www.uaz.ru/data/uaz/assets/00000000332.jpg?key=contain",
   //                                                               "https://cdnstatic.rg.ru/crop1300x868/uploads/images/205/59/22/01.jpg"] ),
@@ -178,7 +187,6 @@ List<Cars> carsList = [
 ];
 
 List<Cars> cart = [
-
 ];
 
 List<Cars> favorite = [];

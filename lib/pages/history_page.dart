@@ -5,8 +5,7 @@ import 'package:rus_cars_list/data/userdata.dart';
 import 'package:rus_cars_list/widgetSamples/history_list.dart';
 
 class HistoryPage extends StatefulWidget {
-  const HistoryPage({super.key, required this.UserHistory});
-  final UserHistory;
+  HistoryPage({super.key});
   @override
   State<HistoryPage> createState() => _HistoryPageState();
 }

@@ -42,7 +42,7 @@ class HistoryList extends StatelessWidget {
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerRight,
-                  child: Text('${userHistoryList[cardIndex].finalCost}${'₽'}',
+                  child: Text('${userHistoryList[cardIndex].car.price}${'₽'}',
                     style: TextStyle(fontSize: 18,
                     fontWeight: FontWeight.bold),),
                 ))

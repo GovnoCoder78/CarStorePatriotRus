@@ -73,7 +73,9 @@ class _UserPageState extends State<UserPage> {
                     onPressed: () => Navigator.push(
                         context, 
                         MaterialPageRoute(
-                            builder: (BuildContext context) => HistoryPage(UserHistory: userHistoryList[0]))),
+                            builder: (BuildContext context) => HistoryPage()
+                        )
+                    ),
                       child: Container(
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width * 0.85 ,

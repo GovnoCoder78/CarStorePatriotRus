@@ -15,8 +15,7 @@ class User{
 class UserHistory{
   Cars car;
   DateTime purchaseDate;
-  int finalCost;
-  UserHistory(this.car, this.purchaseDate, this.finalCost);
+  UserHistory(this.car, this.purchaseDate);
 }
 
 List<User> userList = [
@@ -33,7 +32,6 @@ List<User> userList = [
   )
 ];
 List<UserHistory> userHistoryList = [
-  UserHistory(carsList[0], DateTime(1999,12,2), 1200000),
 
 ];
 

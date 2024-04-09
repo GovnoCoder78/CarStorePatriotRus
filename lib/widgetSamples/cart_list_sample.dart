@@ -92,8 +92,8 @@ class _cart_list_sampleState extends State<cart_list_sample> {
                               maxVal: 1000,
                               steps: 1,
                               onQtyChanged: (val) {
-                                print(val);
                                 cart[carId].count = val;
+                                print(cart[carId].count);
                               },
                               qtyFormProps: QtyFormProps(enableTyping: false),
                             ),
